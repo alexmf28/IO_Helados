@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IO_Helados.Models.Hel_Ing>
+
+@{
+    ViewBag.Title = "index";
+}
+<div style="padding-top:100px"><h2>Lista de Hel_Ing</h2></div>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="background-color:white" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idHelado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idIngrediente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NHelado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NIngrediente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantRequerida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idHelado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idIngrediente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHelado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIngrediente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantRequerida)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.idHelado  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.idHelado  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.idHelado  })
+        </td>
+    </tr>
+}
+
+</table>
